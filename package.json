@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
+  "exports": {
+    ".": "./registry/index.ts"
+  },
+  "types": "./registry/index.ts",
   "scripts": {
     "build": "shadcn build registry.json --output public/r",
     "check": "bun run typecheck && bun run build",
