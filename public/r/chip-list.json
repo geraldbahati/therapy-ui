@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "chip-list",
+  "title": "Chip List",
+  "description": "Removable selected-item chips.",
+  "registryDependencies": [
+    "geraldbahati/therapy-ui/utils",
+    "geraldbahati/therapy-ui/icons"
+  ],
+  "files": [
+    {
+      "path": "registry/ui/chip-list.tsx",
+      "content": "import type { ReactNode } from \"react\";\n\nimport { XIcon } from \"@/components/ui/icons\";\nimport { cn } from \"@/lib/utils\";\n\nexport interface ChipItem {\n  id: string;\n  name: string;\n}\n\nexport interface ChipListProps<TItem extends ChipItem = ChipItem> {\n  items: TItem[];\n  removeLabel?: (item: TItem) => string;\n  className?: string;\n  chipClassName?: string;\n  removeButtonClassName?: string;\n  removeIcon?: ReactNode;\n  onRemove: (id: string) => void;\n}\n\nexport function ChipList<TItem extends ChipItem>({\n  items,\n  removeLabel = (item) => `Remove ${item.name}`,\n  className,\n  chipClassName,\n  removeButtonClassName,\n  removeIcon = <XIcon className=\"size-4\" />,\n  onRemove,\n}: ChipListProps<TItem>) {\n  if (items.length === 0) return null;\n\n  return (\n    <div\n      className={cn(\n        \"selected-specialisms mt-6 flex flex-wrap gap-2.5\",\n        className,\n      )}\n    >\n      {items.map((item) => (\n        <span\n          key={item.id}\n          className={cn(\n            \"selected-specialism inline-flex items-center gap-2.5 rounded-full border border-secondary py-2.5 pr-3.75 pl-5 text-xl leading-none\",\n            chipClassName,\n          )}\n        >\n          {item.name}\n          <button\n            type=\"button\"\n            onClick={() => onRemove(item.id)}\n            aria-label={removeLabel(item)}\n            className={cn(\n              \"inline-flex cursor-pointer items-center justify-center text-xl leading-none\",\n              removeButtonClassName,\n            )}\n          >\n            {removeIcon}\n          </button>\n        </span>\n      ))}\n    </div>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "@ui/chip-list.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "therapy-ui",
+  "title": "Therapy UI",
+  "description": "Install the Therapy UI theme, utilities, and component set.",
+  "registryDependencies": [
+    "geraldbahati/therapy-ui/theme",
+    "geraldbahati/therapy-ui/button",
+    "geraldbahati/therapy-ui/autocomplete-field",
+    "geraldbahati/therapy-ui/chip-list",
+    "geraldbahati/therapy-ui/filter-controls",
+    "geraldbahati/therapy-ui/search-field"
+  ],
+  "type": "registry:item"
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "search-field",
+  "title": "Search Field",
+  "description": "Dashed-underline search input with optional clear action.",
+  "registryDependencies": [
+    "geraldbahati/therapy-ui/theme",
+    "geraldbahati/therapy-ui/utils",
+    "geraldbahati/therapy-ui/icons"
+  ],
+  "files": [
+    {
+      "path": "registry/ui/search-field.tsx",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport type { ReactNode } from \"react\";\n\nimport { XIcon } from \"@/components/ui/icons\";\nimport { cn } from \"@/lib/utils\";\n\nexport interface SearchFieldProps {\n  label: string;\n  name: string;\n  placeholder?: string;\n  defaultValue?: string;\n  clearable?: boolean;\n  className?: string;\n  inputClassName?: string;\n  clearButtonClassName?: string;\n  clearIcon?: ReactNode;\n}\n\nexport function SearchField({\n  label,\n  name,\n  placeholder,\n  defaultValue = \"\",\n  clearable = false,\n  className,\n  inputClassName,\n  clearButtonClassName,\n  clearIcon = <XIcon className=\"size-[18px]\" />,\n}: SearchFieldProps) {\n  const [value, setValue] = useState(defaultValue);\n\n  return (\n    <div className={cn(\"relative w-full\", className)}>\n      <input\n        type=\"text\"\n        name={name}\n        autoComplete=\"off\"\n        aria-label={label}\n        placeholder={placeholder}\n        value={value}\n        onChange={(event) => setValue(event.target.value)}\n        className={cn(\n          \"dashed-rule-x h-15 w-full bg-transparent text-2xl font-light caret-secondary outline-none\",\n          inputClassName,\n        )}\n      />\n\n      {clearable && value && (\n        <button\n          type=\"button\"\n          onClick={() => setValue(\"\")}\n          aria-label={`Clear ${label}`}\n          className={cn(\"absolute top-5.25 right-0\", clearButtonClassName)}\n        >\n          {clearIcon}\n        </button>\n      )}\n    </div>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "@ui/search-field.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

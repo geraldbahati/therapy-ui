@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "icons",
+  "title": "Icons",
+  "description": "Small outline icons used by Therapy UI components.",
+  "files": [
+    {
+      "path": "registry/ui/icons.tsx",
+      "content": "import type { SVGProps } from \"react\";\n\nconst outlineIcon = {\n  width: 24,\n  height: 24,\n  viewBox: \"0 0 24 24\",\n  fill: \"none\",\n  stroke: \"currentColor\",\n  strokeWidth: 2,\n  strokeLinecap: \"round\",\n  strokeLinejoin: \"round\",\n  \"aria-hidden\": true,\n} as const;\n\nexport function ChevronDownIcon(props: SVGProps<SVGSVGElement>) {\n  return (\n    <svg {...outlineIcon} {...props}>\n      <path d=\"m6 9 6 6 6-6\" />\n    </svg>\n  );\n}\n\nexport function XIcon(props: SVGProps<SVGSVGElement>) {\n  return (\n    <svg {...outlineIcon} {...props}>\n      <path d=\"M18 6 6 18M6 6l12 12\" />\n    </svg>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "@ui/icons.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

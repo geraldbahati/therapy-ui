@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button",
+  "title": "Button",
+  "description": "Therapy button primitive with brand variants.",
+  "dependencies": [
+    "@base-ui/react"
+  ],
+  "registryDependencies": [
+    "geraldbahati/therapy-ui/theme",
+    "geraldbahati/therapy-ui/utils",
+    "geraldbahati/therapy-ui/button-variants"
+  ],
+  "files": [
+    {
+      "path": "registry/ui/button.tsx",
+      "content": "import { Button as ButtonPrimitive } from \"@base-ui/react/button\";\n\nimport { cn } from \"@/lib/utils\";\nimport { buttonVariants, type ButtonVariants } from \"@/lib/button-variants\";\n\ntype ButtonProps = ButtonPrimitive.Props & ButtonVariants;\n\nfunction Button({\n  className,\n  variant = \"default\",\n  size = \"default\",\n  ...props\n}: ButtonProps) {\n  return (\n    <ButtonPrimitive\n      data-slot=\"button\"\n      className={cn(buttonVariants({ variant, size, className }))}\n      {...props}\n    />\n  );\n}\n\nexport { Button };\nexport type { ButtonProps };\n",
+      "type": "registry:ui",
+      "target": "@ui/button.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}
