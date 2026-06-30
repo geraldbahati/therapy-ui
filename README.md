@@ -21,6 +21,9 @@ bunx shadcn@latest add geraldbahati/therapy-ui/button
 bunx shadcn@latest add geraldbahati/therapy-ui/filter-controls
 ```
 
+If your project already has shadcn's default `lib/utils.ts`, pass
+`--overwrite` or answer yes when the CLI asks whether to replace it.
+
 Available items:
 
 - `therapy-ui`

@@ -59,7 +59,6 @@
         "light": {
           "background": "oklch(0.931 0.015 88.5)",
           "foreground": "oklch(0.285 0 0)",
-          "rule-color": "var(--primary)",
           "card": "oklch(1 0 0)",
           "card-foreground": "oklch(0.145 0 0)",
           "popover": "oklch(1 0 0)",
@@ -84,7 +83,6 @@
         "dark": {
           "background": "oklch(0.145 0 0)",
           "foreground": "oklch(0.985 0 0)",
-          "rule-color": "color-mix(in oklab, var(--primary) 40%, transparent)",
           "card": "oklch(0.205 0 0)",
           "card-foreground": "oklch(0.985 0 0)",
           "popover": "oklch(0.205 0 0)",
@@ -107,7 +105,7 @@
       },
       "css": {
         ".dashed-rule-x": {
-          "background-image": "repeating-linear-gradient(to right, var(--rule-color) 0 6px, transparent 6px 12px)",
+          "background-image": "repeating-linear-gradient(to right, var(--rule-color, var(--primary)) 0 6px, transparent 6px 12px)",
           "background-size": "100% 1px",
           "background-position": "0 100%",
           "background-repeat": "no-repeat"
